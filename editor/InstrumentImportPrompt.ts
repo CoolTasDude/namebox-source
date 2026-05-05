@@ -19,20 +19,12 @@ export class InstrumentImportPrompt implements Prompt {
     private readonly _fileInput: HTMLInputElement = input({ type: "file", accept: ".json,application/json" });
 
     private readonly _strategyInfoText: HTMLDivElement = div({ style: "text-align: left;" },
-        "You must enable either ",
-        code("Simultaneous instruments per channel"),
-        " or ",
-        code("Different instruments per pattern"),
-        " to change the import strategy.",
+        "An explanation for why you can't import to NameBox.",
     );
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 300px;" },
-        h2("Import Instrument(s)"),
+        h2("Popup Header"),
         this._strategyInfoText,
-        div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            div({ class: "selectContainer", style: "width: 100%;" }, this._importStrategySelect),
-        ),
-        this._fileInput,
         this._cancelButton,
 
         //If file has 1 instrument, and no checkboxes are selected, add all the instrument to the end

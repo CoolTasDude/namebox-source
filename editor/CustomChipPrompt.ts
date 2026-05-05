@@ -251,17 +251,17 @@ export class CustomChipPrompt implements Prompt {
     public readonly _playButton: HTMLButtonElement = button({ style: "width: 55%;", type: "button" });
 
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
 
     private readonly copyButton: HTMLButtonElement = button({ style: "width:86px; margin-right: 5px;", class: "copyButton" }, [
-        "Copy",
+        "Button",
         // Copy icon:
         SVG.svg({ style: "flex-shrink: 0; position: absolute; left: 0; top: 50%; margin-top: -1em; pointer-events: none;", width: "2em", height: "2em", viewBox: "-5 -21 26 26" }, [
             SVG.path({ d: "M 0 -15 L 1 -15 L 1 0 L 13 0 L 13 1 L 0 1 L 0 -15 z M 2 -1 L 2 -17 L 10 -17 L 14 -13 L 14 -1 z M 3 -2 L 13 -2 L 13 -12 L 9 -12 L 9 -16 L 3 -16 z", fill: "currentColor" }),
         ]),
     ]);
     private readonly pasteButton: HTMLButtonElement = button({ style: "width:86px;", class: "pasteButton" }, [
-        "Paste",
+        "Button",
         // Paste icon:
         SVG.svg({ style: "flex-shrink: 0; position: absolute; left: 0; top: 50%; margin-top: -1em; pointer-events: none;", width: "2em", height: "2em", viewBox: "0 0 26 26" }, [
             SVG.path({ d: "M 8 18 L 6 18 L 6 5 L 17 5 L 17 7 M 9 8 L 16 8 L 20 12 L 20 22 L 9 22 z", stroke: "currentColor", fill: "none" }),
@@ -271,7 +271,7 @@ export class CustomChipPrompt implements Prompt {
     private readonly copyPasteContainer: HTMLDivElement = div({ style: "width: 185px;" }, this.copyButton, this.pasteButton);
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 600px;" },
-        h2("Edit Custom Chip Instrument"),
+        h2("Popup Header"),
         div({ style: "display: flex; width: 55%; align-self: center; flex-direction: row; align-items: center; justify-content: center;" },
             this._playButton,
         ),
@@ -310,13 +310,13 @@ export class CustomChipPrompt implements Prompt {
         if (this._doc.synth.playing) {
             this._playButton.classList.remove("playButton");
             this._playButton.classList.add("pauseButton");
-            this._playButton.title = "Pause (Space)";
-            this._playButton.innerText = "Pause";
+            this._playButton.title = "Info Box";
+            this._playButton.innerText = "Button";
         } else {
             this._playButton.classList.remove("pauseButton");
             this._playButton.classList.add("playButton");
-            this._playButton.title = "Play (Space)";
-            this._playButton.innerText = "Play";
+            this._playButton.title = "Info Box";
+            this._playButton.innerText = "Button";
         }
     }
 

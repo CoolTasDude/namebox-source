@@ -97,7 +97,7 @@ export class FilterEditor {
                 this._indicators[i].setAttribute("dominant-baseline", "central");
                 this._indicators[i].setAttribute("pointer-events", "none");
                 this._indicators[i].setAttribute("font-weight", "bolder");
-                this._indicators[i].textContent = "" + (i + 1);
+                this._indicators[i].textContent = "#";
                 this._indicators[i].style.setProperty("display", "none");
                 if (i > 8) { //two digit
                     this._indicators[i].style.setProperty("font-size", "19px");
@@ -326,7 +326,7 @@ export class FilterEditor {
             let gain: number = Math.round(this._yToGain(this._mouseY));
             let freq: number = Math.round(this._xToFreq(this._mouseX));
             if (freq >= 0 && freq < Config.filterFreqRange && gain >= 0 && gain < Config.filterGainRange)
-                this.coordText.innerText = "(" + freq + ", " + gain + ")";
+                this.coordText.innerText = "(coordinates)";
             else
                 this.coordText.innerText = "";
         }
@@ -504,11 +504,11 @@ export class FilterEditor {
                 this._highlight.style.display = "";
 
                 if (this.coordText != null) {
-                    this.coordText.innerText = "(" + point.freq + ", " + point.gain + ")";
+                    this.coordText.innerText = "(coordinates)";
                 }
             }
             if ((this._selectedIndex == i || (this._addingPoint && this._mouseDown && i == this._useFilterSettings.controlPointCount - 1)) && (this._mouseOver || this._mouseDown) && !this._deletingPoint) {
-                this._label.textContent = (i + 1) + ": " + Config.filterTypeNames[point.type] + (this._larger ? " @" + prettyNumber(point.getHz()) + "Hz" : "");
+                this._label.textContent = "+ filter Hz";
             }
 
             if (this._larger) {
@@ -520,7 +520,7 @@ export class FilterEditor {
         this._controlPointPath.setAttribute("d", controlPointPath);
         this._dottedLinePath.setAttribute("d", dottedLinePath);
         if (this._addingPoint && !this._mouseDown && this._mouseOver) {
-            this._label.textContent = "+ " + Config.filterTypeNames[this._addedType];
+            this._label.textContent = "+ filter";
         }
 
         // Hide unused control point labels

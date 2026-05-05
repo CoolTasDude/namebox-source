@@ -1,7 +1,7 @@
 {
 	"name": "slarmoosbox",
 	"version": "1.4.11",
-	"description": "Slarmoo's Box is a mod of Ultrabox that aims to advance Beepbox's capabilities.",
+	"description": "Website Description.",
 	"author": "Slarmoo",
 	"contributors": [
 		"Slarmoo",
@@ -38,7 +38,7 @@
 	"devDependencies": {
 		"@electron/packager": "^18.0.0",
 		"@rollup/plugin-node-resolve": "^15.1.0",
-		"electron": "^33.0.0",
+		"electron": "^41.4.0",
 		"rollup": "^2.79.1",
 		"rollup-plugin-sourcemaps": "^0.6.3",
 		"terser": "^5.19.2",
@@ -47,7 +47,6 @@
 	"dependencies": {
 		"@types/jquery": "^3.5.30",
 		"@types/select2": "^4.0.63",
-		"electron": "^29.1.1",
 		"electron-packager": "^17.1.2",
 		"esbuild": "^0.25.5",
 		"express": "^4.21.2",

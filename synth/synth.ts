@@ -3506,7 +3506,7 @@ export class Song {
         }
 
         //This is the tab's display name
-        this.title = "Untitled";
+        this.title = "Default Title";
         document.title = this.title + " - " + EditorConfig.versionDisplayName;
 
         if (andResetChannels) {

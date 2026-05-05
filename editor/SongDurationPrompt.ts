@@ -15,23 +15,23 @@ export class SongDurationPrompt implements Prompt {
     private readonly _computedSamplesLabel: HTMLDivElement = div({ style: "width: 10em;" }, new Text("0:00"));
     private readonly _barsStepper: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "number", step: "1" });
     private readonly _positionSelect: HTMLSelectElement = select({ style: "width: 100%;" },
-        option({ value: "end" }, "Apply change at end of song."),
-        option({ value: "beginning" }, "Apply change at beginning of song."),
+        option({ value: "end" }, "Descriptive Option."),
+        option({ value: "beginning" }, "Descriptive Option."),
     );
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 250px;" },
-        h2("Song Length"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: space-between;" },
-            "Length:",
+            "Descriptor:",
             this._computedSamplesLabel,
         ),
         div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
             div({ style: "display: inline-block; text-align: right;" },
-                "Bars per song:",
+                "Input Box:",
                 br(),
-                span({ style: `font-size: smaller; color: ${ColorConfig.secondaryText};` }, "(Multiples of 4 are recommended)"),
+                span({ style: `font-size: smaller; color: ${ColorConfig.secondaryText};` }, "(Subtext)"),
 
             ),
             this._barsStepper,

@@ -54,18 +54,18 @@ export class ExportPrompt implements Prompt {
     private readonly _loopDropDown: HTMLInputElement = input({ style: "width: 2em;", type: "number", min: "1", max: "4", step: "1" });
     private readonly _enableOutro: HTMLInputElement = input({ type: "checkbox" });
     private readonly _formatSelect: HTMLSelectElement = select({ style: "width: 100%;" },
-        option({ value: "wav" }, "Export to .wav file."),
-        option({ value: "mp3" }, "Export to .mp3 file."),
+        option({ value: "wav" }, "Export option."),
+        option({ value: "mp3" }, "Export option."),
         //option({ value: "ogg" }, "Export to .ogg file."),
-        option({ value: "midi" }, "Export to .mid file."),
-        option({ value: "json" }, "Export to .json file."),
-        option({ value: "html" }, "Export to .html file."),
+        option({ value: "midi" }, "Export option."),
+        option({ value: "json" }, "Export option."),
+        option({ value: "html" }, "Export option."),
     );
     private readonly _removeWhitespace: HTMLInputElement = input({ type: "checkbox" });
     private readonly _removeWhitespaceDiv: HTMLDivElement = div({ style: "vertical-align: middle; align-items: center; justify-content: space-between; margin-bottom: 14px;" },
-    "Remove Whitespace: ", this._removeWhitespace);
+    "Checkbox", this._removeWhitespace);
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _exportButton: HTMLButtonElement = button({ class: "exportButton", style: "width:45%;" }, "Export");
+    private readonly _exportButton: HTMLButtonElement = button({ class: "exportButton", style: "width:45%;" }, "Button");
     private readonly _outputProgressBar: HTMLDivElement = div({ style: `width: 0%; background: ${ColorConfig.loopAccent}; height: 100%; position: absolute; z-index: 2;` });
     private readonly _outputProgressLabel: HTMLDivElement = div({ style: `position: relative; top: -1px; z-index: 3;` }, "0%");
     private readonly _outputProgressContainer: HTMLDivElement = div({ style: `height: 12px; background: ${ColorConfig.uiWidgetBackground}; display: block; position: relative; z-index: 1;` },
@@ -85,20 +85,20 @@ export class ExportPrompt implements Prompt {
     ];
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 200px;" },
-        h2("Export Options"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: space-between;" },
-            "File name:",
+            "Input Box:",
             this._fileName,
         ),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: space-between;" },
-            "Length:",
+            "Descriptor:",
             this._computedSamplesLabel,
         ),
         div({ style: "display: table; width: 100%;" },
             div({ style: "display: table-row;" },
-                div({ style: "display: table-cell;" }, "Intro:"),
-                div({ style: "display: table-cell;" }, "Loop Count:"),
-                div({ style: "display: table-cell;" }, "Outro:"),
+                div({ style: "display: table-cell;" }, "Checkbox:"),
+                div({ style: "display: table-cell;" }, "Input Box:"),
+                div({ style: "display: table-cell;" }, "Checkbox:"),
             ),
             div({ style: "display: table-row;" },
                 div({ style: "display: table-cell; vertical-align: middle;" }, this._enableIntro),
@@ -108,7 +108,7 @@ export class ExportPrompt implements Prompt {
         ),
         div({ class: "selectContainer", style: "width: 100%;" }, this._formatSelect),
         this._removeWhitespaceDiv,
-        div({ style: "text-align: left;" }, "Exporting can be slow. Reloading the page or clicking the X will cancel it. Please be patient."),
+        div({ style: "text-align: left;" }, "Warning about export speed. Info on how to cancel export. Generic notice."),
         this._outputProgressContainer,
         div({ style: "display: flex; flex-direction: row-reverse; justify-content: space-between;" },
             this._exportButton,

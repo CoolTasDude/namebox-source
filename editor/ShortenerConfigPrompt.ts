@@ -6,15 +6,15 @@ const { button, div, h2, select, option } = HTML;
 
 export class ShortenerConfigPrompt implements Prompt {
     private readonly _shortenerStrategySelect: HTMLSelectElement = select({ style: "width: 100%;" },
-        option({ value: "tinyurl" }, "tinyurl.com"),
-        option({ value: "isgd" }, "is.gd"),
+        option({ value: "tinyurl" }, "Option"),
+        option({ value: "isgd" }, "Option"),
         // option({value: "beepboxnet"}, "beepbox.net"),
     );
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 250px;" },
-        h2("Configure Shortener"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
             div({ class: "selectContainer", style: "width: 100%;" }, this._shortenerStrategySelect),
         ),

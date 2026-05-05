@@ -7,7 +7,7 @@ import { Prompt } from "./Prompt";
 import { ChangeGroup } from "./Change";
 import { ChangePatternsPerChannel, ChangeInstrumentsFlags, ChangeChannelCount } from "./changes";
 
-const { button, div, label, br, h2, input } = HTML;
+const { button, div, label, h2, input } = HTML;
 
 export class ChannelSettingsPrompt implements Prompt {
     private readonly _patternsStepper: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "number", step: "1" });
@@ -18,36 +18,32 @@ export class ChannelSettingsPrompt implements Prompt {
     private readonly _patternInstrumentsBox: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "checkbox" });
 
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
 
-    public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 250px; text-align: right;" },
-        h2("Channel Settings"),
+    public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 250px;" },
+        h2("Popup Header"),
         label({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Pitch channels:",
+            "Input Box:",
             this._pitchChannelStepper,
         ),
         label({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Drum channels:",
+            "Input Box:",
             this._drumChannelStepper,
         ),
         div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Mod channels:",
+            "Input Box:",
             this._modChannelStepper,
         ),
         label({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Available patterns per channel:",
+            "Input Box:",
             this._patternsStepper,
         ),
         label({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Simultaneous instruments",
-            br(),
-            "per channel:",
+            "Checkbox:",
             this._layeredInstrumentsBox,
         ),
         label({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Different instruments",
-            br(),
-            "per pattern:",
+            "Checkbox:",
             this._patternInstrumentsBox,
         ),
         div({ style: "display: flex; flex-direction: row-reverse; justify-content: space-between;" },

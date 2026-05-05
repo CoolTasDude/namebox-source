@@ -12,19 +12,19 @@ const { button, div, span, h2, input, br, select, option } = HTML;
 export class MoveNotesSidewaysPrompt implements Prompt {
     private readonly _beatsStepper: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "number", step: "0.01", value: "0" });
     private readonly _conversionStrategySelect: HTMLSelectElement = select({ style: "width: 100%;" },
-        option({ value: "overflow" }, "Overflow notes across bars."),
-        option({ value: "wrapAround" }, "Wrap notes around within bars."),
+        option({ value: "overflow" }, "Descriptive Option."),
+        option({ value: "wrapAround" }, "Descriptive Option."),
     );
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
     private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 250px;" },
-        h2("Move Notes Sideways"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
             div({ style: "text-align: right;" },
-                "Beats to move:",
+                "Input Box:",
                 br(),
-                span({ style: `font-size: smaller; color: ${ColorConfig.secondaryText};` }, "(Negative is left, positive is right)"),
+                span({ style: `font-size: smaller; color: ${ColorConfig.secondaryText};` }, "(Subtext)"),
             ),
             this._beatsStepper,
         ),

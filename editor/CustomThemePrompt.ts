@@ -129,30 +129,30 @@ export class CustomThemePrompt implements Prompt {
 	--disabled-note-primary:    #999;
 	--disabled-note-secondary:  #666; }`});
 	private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-	private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
-	private readonly _resetButton: HTMLButtonElement = button({ style: "height: auto; min-height: var(--button-size);" }, "Reset to defaults");
+	private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
+	private readonly _resetButton: HTMLButtonElement = button({ style: "height: auto; min-height: var(--button-size);" }, "Lengthy Button");
 
 	public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 300px;" },
-		h2("Import"),
+		h2("Popup Header"),
 		p({ style: "text-align: left; margin: 0.5em 0;" },
-			"You can upload images to create a custom theme. The first image will become the editor background, and the second image will be tiled across the webpage.",
+			"A paragraph about making custom themes.",
 		),
 		div({ style: "text-align: left; margin-top: 0.5em; margin-bottom: 0.5em;" },
-			"You can find a list of custom themes made by other users on the ",
-			a({ target: "_blank", href: "https://docs.google.com/spreadsheets/d/1dGjEcLgJrPwzBExPmwA9pbE_KVQ3jNrnTBrd46d2IKo/edit" }, "custom theme sheet."),
+			"Information directing the user to ",
+			a({ target: "_blank", href: "https://docs.google.com/spreadsheets/d/1dGjEcLgJrPwzBExPmwA9pbE_KVQ3jNrnTBrd46d2IKo/edit" }, "clickable link."),
         ),
         div(),
         p({ style: "text-align: left; margin: 0;" },
-            "Editor Background Image:",
+            "Description:",
             this._fileInput
         ),
         p({ style: "text-align: left; margin: 0.5em 0;" },
-            "Website Background Image:",
+            "Description:",
             this._fileInput2
         ),
         div(),
         p({ style: "text-align: left; margin: 0;" },
-            "Replace the text below with your custom theme data to load it:",
+            "Imformation about loading a custom theme:",
         ),
         this._colorInput,
         div({ style: "display: flex; flex-direction: row-reverse; justify-content: space-between;" },

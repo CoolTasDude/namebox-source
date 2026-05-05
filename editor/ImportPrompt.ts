@@ -31,15 +31,10 @@ export class ImportPrompt implements Prompt {
     );
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 300px;" },
-        h2("Import"),
+        h2("Popup Header"),
         p({ style: "text-align: left; margin: 0.5em 0;" },
-            "BeepBox songs can be exported and re-imported as .json files. You could also use other means to make .json files for BeepBox as long as they follow the same structure.",
+            "An explanation for why you can't import to NameBox.",
         ),
-        p({ style: "text-align: left; margin: 0.5em 0;" },
-            "BeepBox can also (crudely) import .mid files. There are many tools available for creating .mid files. Shorter and simpler songs are more likely to work well.",
-        ),
-        this._modeImportSelect,
-        this._fileInput,
         this._cancelButton,
     );
 

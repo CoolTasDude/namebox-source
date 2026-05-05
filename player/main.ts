@@ -169,10 +169,10 @@ if (!showOscilloscope) {
 	synth.oscEnabled = false;
 }
 let titleText: HTMLHeadingElement = h1({ style: "flex-grow: 1; margin: 0 1px; margin-left: 10px; overflow: hidden;" }, "");
-let editLink: HTMLAnchorElement = a({target: "_top", style: "margin: 0 4px;"}, "✎ Edit");
-let copyLink: HTMLAnchorElement = a({href: "javascript:void(0)", style: "margin: 0 4px;"}, "⎘ Copy URL");
-let shareLink: HTMLAnchorElement = a({href: "javascript:void(0)", style: "margin: 0 4px;"}, "⤳ Share");
-let fullscreenLink: HTMLAnchorElement = a({target: "_top", style: "margin: 0 4px;"}, "⇱ Fullscreen");
+let editLink: HTMLAnchorElement = a({target: "_top", style: "margin: 0 4px;"}, "◻ Buton");
+let copyLink: HTMLAnchorElement = a({href: "javascript:void(0)", style: "margin: 0 4px;"}, "◻ Button");
+let shareLink: HTMLAnchorElement = a({href: "javascript:void(0)", style: "margin: 0 4px;"}, "◻ Button");
+let fullscreenLink: HTMLAnchorElement = a({target: "_top", style: "margin: 0 4px;"}, "◻ Button");
 
 let draggingPlayhead: boolean = false;
 	const playButton: HTMLButtonElement = button({style: "width: 100%; height: 100%; max-height: 50px;"});
@@ -660,13 +660,13 @@ function renderPlayButton(): void {
 	if (synth.playing) {
 		playButton.classList.remove("playButton");
 		playButton.classList.add("pauseButton");
-		playButton.title = "Pause (Space)";
-		playButton.textContent = "Pause";
+		playButton.title = "Info Box";
+		playButton.textContent = "Button";
 	} else {
 		playButton.classList.remove("pauseButton");
 		playButton.classList.add("playButton");
-		playButton.title = "Play (Space)";
-		playButton.textContent = "Play";
+		playButton.title = "Info Box";
+		playButton.textContent = "Button";
 	}
 	pauseButtonDisplayed = synth.playing;
 }

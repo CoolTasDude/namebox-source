@@ -229,18 +229,18 @@ export class EuclideanRhythmPrompt implements Prompt {
     private readonly _pitchStepper: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "number", min: "0", max: Config.maxPitch, value: "0", step: "1" });
     private readonly _barAmountStepper: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "number", min: "1", max: Config.barCountMax, value: "1", step: "1" });
 
-    private readonly _extendUntilLoopButton: HTMLButtonElement = button({ style: "height: auto; min-height: var(--button-size); margin-left: 1em;" }, "Extend until loop");
+    private readonly _extendUntilLoopButton: HTMLButtonElement = button({ style: "height: auto; min-height: var(--button-size); margin-left: 1em;" }, "Button");
 
     private readonly _generateFadingNotesBox: HTMLInputElement = input({ type: "checkbox", style: "width: 1em; padding: 0; margin-left: 1em;" });
 
     private readonly _invertBox: HTMLInputElement = input({ type: "checkbox", style: "width: 1em; padding: 0; margin-left: 1em;" });
 
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width: 45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width: 45%;" }, "Button");
 
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 600px;" },
-        h2("Generate Euclidean Rhythm"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center;" },
             this._sequenceButtonContainer
         ),
@@ -272,19 +272,19 @@ export class EuclideanRhythmPrompt implements Prompt {
                 div({ style: "flex-grow: 1; " },
                     div({ style: "display: flex; flex-direction: row; align-items: center; height: 3em; justify-content: flex-end;" },
                         div({ style: `text-align: right; flex-grow: 1; color: ${ColorConfig.primaryText};` },
-                            "Steps"
+                            "Input Box"
                         ),
                         this._stepsStepper
                     ),
                     div({ style: "display: flex; flex-direction: row; align-items: center; height: 3em; justify-content: flex-end; margin-top: 0.5em;" },
                         div({ style: `text-align: right; flex-grow: 1; color: ${ColorConfig.primaryText};` },
-                            "Pulses"
+                            "Input Box"
                         ),
                         this._pulsesStepper
                     ),
                     div({ style: "display: flex; flex-direction: row; align-items: center; height: 3em; justify-content: flex-end; margin-top: 0.5em;" },
                         div({ style: `text-align: right; flex-grow: 1; color: ${ColorConfig.primaryText};` },
-                            "Rotation"
+                            "Input Box"
                         ),
                         this._rotationStepper
                     ),
@@ -292,7 +292,7 @@ export class EuclideanRhythmPrompt implements Prompt {
                 div({ style: "flex-grow: 1; margin-left: 1em;" },
                     div({ style: "display: flex; flex-direction: row; align-items: center; height: 3em; justify-content: flex-end; margin-bottom: 1em;" },
                         div({ style: `text-align: right; flex-grow: 1; color: ${ColorConfig.primaryText};` },
-                            "Size"
+                            "Input Boxes"
                         ),
                         div({ style: "display: flex; flex-direction: column;" },
                             this._stepSizeNumeratorStepper,
@@ -301,13 +301,13 @@ export class EuclideanRhythmPrompt implements Prompt {
                     ),
                     div({ style: "display: flex; flex-direction: row; align-items: center; height: 3em; justify-content: flex-end; margin-top: 0.5em;" },
                         div({ style: `text-align: right; flex-grow: 1; color: ${ColorConfig.primaryText};` },
-                            "Channel"
+                            "Input Box"
                         ),
                         this._channelStepper
                     ),
                     div({ style: "display: flex; flex-direction: row; align-items: center; height: 3em; justify-content: flex-end; margin-top: 0.5em;" },
                         div({ style: `text-align: right; flex-grow: 1; color: ${ColorConfig.primaryText};` },
-                            "Pitch"
+                            "Input Box"
                         ),
                         this._pitchStepper
                     ),
@@ -316,17 +316,17 @@ export class EuclideanRhythmPrompt implements Prompt {
         ),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: flex-end;" },
             div({ style: `text-align: right; color: ${ColorConfig.primaryText};` },
-                "Generate fading notes"
+                "Checkbox"
             ),
             this._generateFadingNotesBox,
             div({ style: `text-align: right; color: ${ColorConfig.primaryText}; margin-left: 1em;` },
-                "Invert"
+                "Checkbox"
             ),
             this._invertBox,
         ),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: flex-end;" },
             div({ style: `text-align: right; color: ${ColorConfig.primaryText};` },
-                "Length (in bars)"
+                "Input Box"
             ),
             this._barAmountStepper,
             this._extendUntilLoopButton
@@ -1174,7 +1174,7 @@ export class EuclideanRhythmPrompt implements Prompt {
 
         while (this._sequenceButtons.length < this._sequences.length) {
             const sequenceButton: HTMLButtonElement = button({ class: "no-underline" },
-                (this._sequenceButtons.length + 1) + ""
+                "#"
             );
             this._sequenceButtons.push(sequenceButton);
             container.insertBefore(sequenceButton, this._sequenceRemoveButton);
@@ -1240,7 +1240,7 @@ export class EuclideanRhythmPrompt implements Prompt {
         }
         pitch += Math.floor(sequencePitch / Config.pitchesPerOctave);
 
-        this._barPreviewLabel.innerText = `Bar ${this._barPreviewBarIndex + 1}, ${pitch}`;
+        this._barPreviewLabel.innerText = `Target`;
     }
 
     private _renderClock = (): void => {

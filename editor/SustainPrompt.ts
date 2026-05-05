@@ -20,9 +20,9 @@ export class SustainPrompt implements Prompt {
 
     public readonly container: HTMLDivElement = div({ class: "prompt", style: "width: 300px;" },
         div(
-            h2("String Sustain"),
-            p("This setting controls how quickly the picked string vibration decays."),
-            p("Unlike most of BeepBox's instrument synthesizer features, a picked string cannot change frequency suddenly while maintaining its decay. If a tone's pitch changes suddenly (e.g. if the chord type is set to \"arpeggio\" or the transition type is set to \"continues\") then the string will be re-picked and start decaying from the beginning again, even if the envelopes don't otherwise restart."),
+            h2("Popup Header"),
+            p("Informative sentence."),
+            p("Paragraph of text."),
         ),
         div({ style: { display: Config.enableAcousticSustain ? undefined : "none" } },
             p("BeepBox comes with two slightly different sustain designs. You can select one here and press \"Okay\" to confirm it."),

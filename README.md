@@ -4,7 +4,7 @@ Slarmoo's Box is an online tool for sketching and sharing instrumental music.
 You can find it [here](https://github.com/slarmoo/slarmoosbox/).
 It is a modification of [Ultrabox](https://ultraabox.github.io), which is a modification of [JummBox](https://github.com/jummbus/jummbox), which inturn is a modification of the [original BeepBox](https://beepbox.co).
 
-Slarmoo's Box is a mod of Ultrabox that aims to advance Beepbox's capabilities. Feel free to contribute!
+Website Description. Feel free to contribute!
 
 
 All song data is packaged into the URL at the top of your browser. When you make

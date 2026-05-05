@@ -10,21 +10,19 @@ import { Channel, Instrument } from "../synth/synth";
 const { button, div, h2, input, label, br } = HTML;
 export class InstrumentExportPrompt implements Prompt {
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _exportButton: HTMLButtonElement = button({ class: "exportButton", style: "width:45%;" }, "Export");
+    private readonly _exportButton: HTMLButtonElement = button({ class: "exportButton", style: "width:45%;" }, "Button");
     private readonly _exportMultipleBox: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "checkbox" });
     private readonly _channelName: String = this._doc.song.channels[this._doc.channel].name == "" ? Config.jsonFormat + "-Instrument" : this._doc.song.channels[this._doc.channel].name;
     private readonly _fileName: HTMLInputElement = input({ type: "text", style: "width: 10em;", value: this._channelName, maxlength: 250, "autofocus": "autofocus" });
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 200px;" },
-        h2("Export Instruments Options"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: space-between;" },
-            "File name:",
+            "Input Box:",
             this._fileName,
         ),
         label({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
-            "Export all instruments",
-            br(),
-            "in channel:",
+            "Checkbox:",
             this._exportMultipleBox,
         ),
         div({ style: "display: flex; flex-direction: row-reverse; justify-content: space-between;" },

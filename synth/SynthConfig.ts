@@ -1118,7 +1118,7 @@ export class Config {
     public static readonly filterGainCenter: number = 7;
     public static readonly filterGainStep: number = 1.0 / 2.0;
     public static readonly filterMaxPoints: number = 12;
-    public static readonly filterTypeNames: ReadonlyArray<string> = ["low-pass", "high-pass", "peak"]; // See FilterType enum above.
+    public static readonly filterTypeNames: ReadonlyArray<string> = ["filter", "filter", "filter"]; // See FilterType enum above.
     public static readonly filterMorphCount: number = 10; // Number of filter shapes allowed for modulating between. Counts the 0/default position.
 
     public static readonly filterSimpleCutRange: number = 11;

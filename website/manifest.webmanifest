@@ -1,7 +1,7 @@
 {
 	"name": "Slarmoo's Box",
 	"short_name": "Slarmoo's Box",
-	"description": "Slarmoo's Box is a mod of Ultrabox that aims to advance Beepbox's capabilities.",
+	"description": "Website Description.",
 	"scope": "/",
 	"start_url": ".",
 	"display": "browser",

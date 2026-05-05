@@ -76,10 +76,10 @@ export class ThemePrompt implements Prompt {
 		),
 	);
 	private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-	private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+	private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
 
 	public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 220px;" },
-		h2("Set Theme"),
+		h2("Popup Header"),
 		div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
 			div({ class: "selectContainer", style: "width: 100%;" }, this._themeSelect),
 		),

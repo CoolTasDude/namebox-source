@@ -11,9 +11,9 @@ import { HTML, SVG } from "imperative-html/dist/esm/elements-strict";
 export class TrackEditor {
     public readonly _barDropDown: HTMLSelectElement = HTML.select({ style: "width: 32px; height: " + Config.barEditorHeight + "px; top: 0px; position: absolute; opacity: 0" },
 
-        HTML.option({ value: "barBefore" }, "Insert Bar Before"),
-        HTML.option({ value: "barAfter" }, "Insert Bar After"),
-        HTML.option({ value: "deleteBar" }, "Delete This Bar"),
+        HTML.option({ value: "barBefore" }, "Button"),
+        HTML.option({ value: "barAfter" }, "Button"),
+        HTML.option({ value: "deleteBar" }, "Button"),
     );
     private readonly _channelRowContainer: HTMLElement = HTML.div({ style: `display: flex; flex-direction: column; padding-top: ${Config.barEditorHeight}px` });
     private readonly _barNumberContainer: SVGGElement = SVG.g();
@@ -425,7 +425,7 @@ export class TrackEditor {
             if (this._renderedBarCount < this._doc.song.barCount) {
                 this._barNumbers.length = this._doc.song.barCount;
                 for (var pos = this._renderedBarCount; pos < this._barNumbers.length; pos++) {
-                    this._barNumbers[pos] = SVG.text({ "font-family": "sans-serif", "font-size": "8px", "text-anchor": "middle", "font-weight": "bold", "x": (pos * this._barWidth + this._barWidth / 2) + "px", "y": "7px", fill: ColorConfig.secondaryText }, "" + (pos + 1));
+                    this._barNumbers[pos] = SVG.text({ "font-family": "sans-serif", "font-size": "8px", "text-anchor": "middle", "font-weight": "bold", "x": (pos * this._barWidth + this._barWidth / 2) + "px", "y": "7px", fill: ColorConfig.secondaryText }, "#");
                     if (pos % 4 == 0) {
                         // Highlighting every 4 bars
                         this._barNumbers[pos].setAttribute("fill", ColorConfig.primaryText);

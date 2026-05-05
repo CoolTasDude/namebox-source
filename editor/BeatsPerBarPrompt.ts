@@ -13,24 +13,24 @@ export class BeatsPerBarPrompt implements Prompt {
     private readonly _computedSamplesLabel: HTMLDivElement = div({ style: "width: 10em;" }, new Text("0:00"));
     private readonly _beatsStepper: HTMLInputElement = input({ style: "width: 3em; margin-left: 1em;", type: "number", step: "1" });
     private readonly _conversionStrategySelect: HTMLSelectElement = select({ style: "width: 100%;" },
-        option({ value: "splice" }, "Splice beats at end of bars."),
-        option({ value: "stretch" }, "Stretch notes to fit in bars."),
-        option({ value: "overflow" }, "Overflow notes across bars."),
+        option({ value: "splice" }, "Descriptive option."),
+        option({ value: "stretch" }, "Descriptive option."),
+        option({ value: "overflow" }, "Descriptive option."),
     );
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 250px;" },
-        h2("Beats Per Bar"),
+        h2("Popup Header"),
         div({ style: "display: flex; flex-direction: row; align-items: center; justify-content: space-between;" },
-            "Length:",
+            "Descriptor:",
             this._computedSamplesLabel,
         ),
         div({ style: "display: flex; flex-direction: row; align-items: center; height: 2em; justify-content: flex-end;" },
             div({ style: "text-align: right;" },
-                "Beats per bar:",
+                "Input Box:",
                 br(),
-                span({ style: "font-size: smaller; color: ${ColorConfig.secondaryText};" }, "(Multiples of 3 or 4 are recommended)"),
+                span({ style: "font-size: smaller; color: ${ColorConfig.secondaryText};" }, "(Subtext)"),
             ),
             this._beatsStepper,
         ),

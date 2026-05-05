@@ -12,11 +12,11 @@ export class SongRecoveryPrompt implements Prompt {
 		private readonly _cancelButton: HTMLButtonElement = button({class: "cancelButton"});
 		
 		public readonly container: HTMLDivElement = div({class: "prompt", style: "width: 300px;"},
-		h2("Song Recovery"),
+		h2("Popup Header"),
 			div({style: "max-height: 385px; overflow-y: auto;"},
-			p("This is a TEMPORARY list of songs you have recently modified. Please keep your own backups of songs you care about! SONGS THAT USE SAMPLES WILL TAKE A WHILE TO LOAD, so be patient!"),
+			p("BORING PARAGRAPH INFO DUMP!"),
 			this._songContainer,
-			p("(If \"Display Song Data in URL\" is enabled in your preferences, then you may also be able to find song versions in your browser history. However, song recovery won't work if you were browsing in private/incognito mode.)"),
+			p("(subtext)"),
 		),
 		this._cancelButton,
 	);

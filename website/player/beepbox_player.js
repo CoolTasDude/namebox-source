@@ -8697,8 +8697,8 @@ var beepbox = (function (exports) {
             return (_a = EditorConfig.presetCategories[0].presets.dictionary) === null || _a === void 0 ? void 0 : _a[TypePresets === null || TypePresets === void 0 ? void 0 : TypePresets[instrument]];
         }
     }
-    EditorConfig.version = "1.4.11";
-    EditorConfig.versionDisplayName = "Slarmoo's Box " + EditorConfig.version;
+    EditorConfig.version = "[Version Number]";
+    EditorConfig.versionDisplayName = "NameBox " + EditorConfig.version;
     EditorConfig.releaseNotesURL = "./patch_notes.html";
     EditorConfig.isOnMac = /^Mac/i.test(navigator.platform) || /Mac OS X/i.test(navigator.userAgent) || /^(iPhone|iPad|iPod)/i.test(navigator.platform) || /(iPhone|iPad|iPod)/i.test(navigator.userAgent);
     EditorConfig.ctrlSymbol = EditorConfig.isOnMac ? "⌘" : "Ctrl+";
@@ -12613,7 +12613,7 @@ var beepbox = (function (exports) {
             for (let i = 0; i < Config.filterMorphCount - 1; i++) {
                 this.eqSubFilters[i] = null;
             }
-            this.title = "Untitled";
+            this.title = "Default Title";
             document.title = this.title + " - " + EditorConfig.versionDisplayName;
             if (andResetChannels) {
                 this.pitchChannelCount = 3;

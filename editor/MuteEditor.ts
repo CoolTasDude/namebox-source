@@ -21,13 +21,13 @@ export class MuteEditor {
 
     private readonly _channelDropDown: HTMLSelectElement = HTML.select({ style: "width: 0px; left: 19px; height: 19px; position:absolute; opacity:0" },
 
-        HTML.option({ value: "rename" }, "Rename..."),
-        HTML.option({ value: "chnUp" }, "Move Channel Up"),
-        HTML.option({ value: "chnDown" }, "Move Channel Down"),
-        HTML.option({ value: "chnMute" }, "Mute Channel"),
-        HTML.option({ value: "chnSolo" }, "Solo Channel"),
-        HTML.option({ value: "chnInsert" }, "Insert Channel Below"),
-        HTML.option({ value: "chnDelete" }, "Delete This Channel"),
+        HTML.option({ value: "rename" }, "Button"),
+        HTML.option({ value: "chnUp" }, "Button"),
+        HTML.option({ value: "chnDown" }, "Button"),
+        HTML.option({ value: "chnMute" }, "Button"),
+        HTML.option({ value: "chnSolo" }, "Button"),
+        HTML.option({ value: "chnInsert" }, "Button"),
+        HTML.option({ value: "chnDelete" }, "Button"),
     );
 
     public readonly container: HTMLElement = HTML.div({ class: "muteEditor", style: "position: sticky; padding-top: " + Config.barEditorHeight + "px;" }, this._channelNameDisplay, this._channelNameInput.input, this._channelDropDown);
@@ -232,12 +232,12 @@ export class MuteEditor {
                 }
                 else {
                     if (index < this._doc.song.pitchChannelCount) {
-                        this._channelNameDisplay.textContent = "Pitch " + (index + 1);
+                        this._channelNameDisplay.textContent = "Default Channel Name";
                     } else if (index < this._doc.song.pitchChannelCount + this._doc.song.noiseChannelCount) {
-                        this._channelNameDisplay.textContent = "Noise " + (index - this._doc.song.pitchChannelCount + 1);
+                        this._channelNameDisplay.textContent = "Default Channel Name";
                     }
                     else {
-                        this._channelNameDisplay.textContent = "Mod " + (index - this._doc.song.pitchChannelCount - this._doc.song.noiseChannelCount + 1);
+                        this._channelNameDisplay.textContent = "Default Channel Name";
                     }
                     // The name set will only show up when this becomes visible, e.g. when the dropdown is opened.
                     this._channelNameDisplay.style.setProperty("display", "none");
@@ -347,19 +347,19 @@ export class MuteEditor {
         if (this._renderedModChannels != this._doc.song.modChannelCount || this._renderedPitchChannels != this._doc.song.pitchChannelCount || this._renderedNoiseChannels != this._doc.song.noiseChannelCount) {
             for (let y: number = 0; y < this._doc.song.getChannelCount(); y++) {
                 if (y < this._doc.song.pitchChannelCount) {
-                    let val: number = (y + 1);
-                    this._channelCounts[y].textContent = val + "";
-                    this._channelCounts[y].style.fontSize = (val >= 10) ? "xx-small" : "inherit";
+                    //let val: number = (y + 1);
+                    this._channelCounts[y].textContent = "#";
+                    //this._channelCounts[y].style.fontSize = (val >= 10) ? "xx-small" : "inherit";
                 }
                 else if (y < this._doc.song.pitchChannelCount + this._doc.song.noiseChannelCount) {
-                    let val: number = (y - this._doc.song.pitchChannelCount + 1);
-                    this._channelCounts[y].textContent = val + "";
-                    this._channelCounts[y].style.fontSize = (val >= 10) ? "xx-small" : "inherit";
+                    //let val: number = (y - this._doc.song.pitchChannelCount + 1);
+                    this._channelCounts[y].textContent = "#";
+                    //this._channelCounts[y].style.fontSize = (val >= 10) ? "xx-small" : "inherit";
                 }
                 else {
-                    let val: number = (y - this._doc.song.pitchChannelCount - this._doc.song.noiseChannelCount + 1);
-                    this._channelCounts[y].textContent = val + "";
-                    this._channelCounts[y].style.fontSize = (val >= 10) ? "xx-small" : "inherit";
+                    //let val: number = (y - this._doc.song.pitchChannelCount - this._doc.song.noiseChannelCount + 1);
+                    this._channelCounts[y].textContent = "#";
+                    //this._channelCounts[y].style.fontSize = (val >= 10) ? "xx-small" : "inherit";
                 }
             }
             this._renderedPitchChannels = this._doc.song.pitchChannelCount;

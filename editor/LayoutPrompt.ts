@@ -9,7 +9,7 @@ const { button, label, div, form, h2, input } = HTML;
 
 export class LayoutPrompt implements Prompt {
     private readonly _fileInput: HTMLInputElement = input({ type: "file", accept: ".json,application/json,.mid,.midi,audio/midi,audio/x-midi" });
-    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Okay");
+    private readonly _okayButton: HTMLButtonElement = button({ class: "okayButton", style: "width:45%;" }, "Button");
     private readonly _cancelButton: HTMLButtonElement = button({ class: "cancelButton" });
     private readonly _form: HTMLFormElement = form({ style: "display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;" },
         label({ class: "layout-option" },
@@ -22,7 +22,7 @@ export class LayoutPrompt implements Prompt {
 						<rect x="2" y="13" width="11" height="5" fill="currentColor"/>
 					</svg>
 				`),
-            div("Small"),
+            div("Layout"),
         ),
         label({ class: "layout-option" },
             input({ type: "radio", name: "layout", value: "long" }),
@@ -35,7 +35,7 @@ export class LayoutPrompt implements Prompt {
 						<rect x="2" y="13" width="22" height="5" fill="currentColor"/>
 					</svg>
 				`),
-            div("Long"),
+            div("Layout"),
         ),
         label({ class: "layout-option" },
             input({ type: "radio", name: "layout", value: "tall" }),
@@ -47,7 +47,7 @@ export class LayoutPrompt implements Prompt {
 						<rect x="2" y="2" width="8" height="16" fill="currentColor"/>
 					</svg>
 				`),
-            div("Tall"),
+            div("Layout"),
         ),
         label({ class: "layout-option" },
             input({ type: "radio", name: "layout", value: "wide" }),
@@ -60,7 +60,7 @@ export class LayoutPrompt implements Prompt {
 						<rect x="7" y="2" width="10" height="16" fill="currentColor"/>
 					</svg>
 				`),
-            div("Wide (JB)"),
+            div("Layout"),
         ),
         label({ class: "layout-option" },
             input({ type: "radio", name: "layout", value: "wide long" }),
@@ -73,7 +73,7 @@ export class LayoutPrompt implements Prompt {
 						<rect x="2" y="13" width="12" height="5" fill="currentColor"/>
 					</svg>
 				`),
-            div("Wide Long (AB)"),
+            div("Layout"),
         ),
         label({ class: "layout-option" },
             input({ type: "radio", name: "layout", value: "flipped long" }),
@@ -86,7 +86,7 @@ export class LayoutPrompt implements Prompt {
 						<rect x="2" y="14" width="22" height="4" fill="currentColor"/>
 					</svg>
 				`),
-            div("Flipped Long (AB)"),
+            div("Layout"),
         ),
         label({ class: "layout-option" },
             input({ type: "radio", name: "layout", value: "focused long" }),
@@ -98,12 +98,12 @@ export class LayoutPrompt implements Prompt {
 						<rect x="2" y="13" width="17" height="5" fill="currentColor"/>
 					</svg>
 				`),
-            div("Focused long (AB)"),
+            div("Layout"),
         ),
     );
 
     public readonly container: HTMLDivElement = div({ class: "prompt noSelection", style: "width: 300px;" },
-        h2("Layout"),
+        h2("Popup Header"),
         this._form,
         div({ style: "display: flex; flex-direction: row-reverse; justify-content: space-between;" },
             this._okayButton,
